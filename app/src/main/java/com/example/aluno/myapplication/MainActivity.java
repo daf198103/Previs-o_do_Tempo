@@ -61,6 +61,8 @@ public class MainActivity extends Activity {
 
 
         final TextView resultArea = (TextView) findViewById(R.id.result);
+        resultArea.setVisibility(View.VISIBLE);
+
 
 
 
