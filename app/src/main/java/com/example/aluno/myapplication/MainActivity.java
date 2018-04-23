@@ -17,6 +17,8 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.LinkedList;
@@ -67,10 +69,10 @@ public class MainActivity extends Activity {
         // Tratamento da excessão de cidade errada ou inexistente.
         if (weather.getName()== null) {
             StringBuilder sb = new StringBuilder();
-            sb.append("-------------------------------------------------------------------"+"\n");
+            sb.append("---------------------------------------------------------"+"\n");
             sb.append("         CIDADE OU ESTADO INVÁLIDO           "+"\n");
             sb.append("         POR FAVOR DIGITE NOVAMENTE!      "+"\n");
-            sb.append("-------------------------------------------------------------------"+"\n");
+            sb.append("---------------------------------------------------------"+"\n");
             resultArea.setText(sb);
 
 
@@ -78,22 +80,22 @@ public class MainActivity extends Activity {
             Weather weather2 = c2.sendGet2(weather.getId());
 
 
-
             StringBuilder sb = new StringBuilder();
             sb.append("--------------------------------------------------" + "\n");
             sb.append("\n");
-            sb.append("|    Data: " + weather2.getData().getDia().toString() + "\n");
-            sb.append("|    Cidade: " + weather.getName() + "\n");
-            sb.append("|    ID: " + Integer.toString(weather.getId()) + "\n");
-            sb.append("|    Estado: " + weather.getState().toString() + "\n");
-            sb.append("|    País: " + weather.getCountry().toString() + "\n");
-            sb.append("|    Temperatura: " + Double.toString(weather2.getData().getTemperature()) + " °C" + "\n");
-            sb.append("|    Direção do Vento: " + weather2.getData().getWindDirection().toString() + "\n");
-            sb.append("|    Velocidade do Vento: " + Integer.toString(weather2.getData().getWindVelocity()) + " km/h" + "\n");
-            sb.append("|    Humidade: " + Integer.toString(weather2.getData().getHumidity()) + " %" + "\n");
-            sb.append("|    Condição: " + weather2.getData().getCondition().toString() + "\n");
-            sb.append("|    Pressão: " + weather2.getData().getPressure().toString() + "\n");
-            sb.append("|    Sensação Térmica: " + weather2.getData().getSensation().toString() + " °C" + "\n");
+            sb.append("    Data: " + weather2.getData().getDia() + "\n");
+            sb.append("\n");
+            sb.append("    Cidade: " + weather.getName() + "\n");
+            sb.append("    ID: " + Integer.toString(weather.getId()) + "\n");
+            sb.append("    Estado: " + weather.getState().toString() + "\n");
+            sb.append("    País: " + weather.getCountry().toString() + "\n");
+            sb.append("    Temperatura: " + Double.toString(weather2.getData().getTemperature()) + " °C" + "\n");
+            sb.append("    Direção do Vento: " + weather2.getData().getWindDirection().toString() + "\n");
+            sb.append("    Velocidade do Vento: " + Integer.toString(weather2.getData().getWindVelocity()) + " km/h" + "\n");
+            sb.append("    Humidade: " + Integer.toString(weather2.getData().getHumidity()) + " %" + "\n");
+            sb.append("    Condição: " + weather2.getData().getCondition().toString() + "\n");
+            sb.append("    Pressão: " + weather2.getData().getPressure().toString() + "\n");
+            sb.append("    Sensação Térmica: " + weather2.getData().getSensation().toString() + " °C" + "\n");
             sb.append("----------------------------------------------------");
 
 
