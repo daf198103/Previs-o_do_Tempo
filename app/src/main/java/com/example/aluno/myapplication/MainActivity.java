@@ -61,6 +61,8 @@ public class MainActivity extends Activity {
 
 
         final TextView resultArea = (TextView) findViewById(R.id.result);
+        resultArea.setVisibility(View.VISIBLE);
+
 
 
 
@@ -69,10 +71,10 @@ public class MainActivity extends Activity {
         // Tratamento da excessão de cidade errada ou inexistente.
         if (weather.getName()== null) {
             StringBuilder sb = new StringBuilder();
-            sb.append("---------------------------------------------------------"+"\n");
+            sb.append("---------------------------------------------"+"\n");
             sb.append("         CIDADE OU ESTADO INVÁLIDO           "+"\n");
-            sb.append("         POR FAVOR DIGITE NOVAMENTE!      "+"\n");
-            sb.append("---------------------------------------------------------"+"\n");
+            sb.append("        POR FAVOR DIGITE NOVAMENTE!      "+"\n");
+            sb.append("---------------------------------------------"+"\n");
             resultArea.setText(sb);
 
 
