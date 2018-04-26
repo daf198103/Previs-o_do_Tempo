@@ -486,8 +486,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< HEAD
 											"left": 525,
 											"top": 309,
+=======
+											"left": 477,
+											"top": 245,
+>>>>>>> 04d7bb0d70c10791a17c35f5a38999fddb41cb9d
 											"width": 175,
 											"height": 13,
 											"autoResize": false,
@@ -952,8 +957,13 @@
 											"showShadow": true,
 											"containerChangeable": false,
 											"containerExtending": false,
+<<<<<<< HEAD
 											"left": 533,
 											"top": 529,
+=======
+											"left": 485,
+											"top": 473,
+>>>>>>> 04d7bb0d70c10791a17c35f5a38999fddb41cb9d
 											"width": 175,
 											"height": 13,
 											"autoResize": false,
