@@ -73,7 +73,7 @@ public class Connection {
                 resultado = res.toString();
             }
             in.close();
-            System.out.println(resultado);
+
             JSONArray j = new JSONArray(resultado);
 
             if(resultado.equalsIgnoreCase("[]")){
