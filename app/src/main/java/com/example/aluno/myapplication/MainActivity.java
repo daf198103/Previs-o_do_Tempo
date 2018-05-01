@@ -23,6 +23,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.w3c.dom.Text;
@@ -35,16 +36,52 @@ import java.util.LinkedList;
 
 import static com.example.aluno.myapplication.R.*;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
 
     Connection c = new Connection();
     Connection c2 = new Connection();
+    String estado = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //SPINNER DOS ESTADOS
+        // Spinner element
+        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+        // Spinner click listener
+        spinner.setOnItemSelectedListener(this);
+
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("SP");categories.add("SC");categories.add("PR");categories.add("RS");categories.add("MG");
+        categories.add("RJ");categories.add("ES");categories.add("MS");categories.add("MT");categories.add("GO");
+        categories.add("TO");categories.add("DF");categories.add("BA");categories.add("SE");categories.add("AL");
+        categories.add("PE");categories.add("PB");categories.add("RN");categories.add("CE");categories.add("PI");
+        categories.add("MA");categories.add("PA");categories.add("RO");categories.add("AP");categories.add("AM");
+        categories.add("RR");categories.add("AC");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        // On selecting a spinner item
+        String item = parent.getItemAtPosition(position).toString();
+        estado = item;
+
+    }
+    public void onNothingSelected(AdapterView<?> arg0) {
 
     }
 
@@ -61,13 +98,14 @@ public class MainActivity extends Activity {
         }
 
 
-        EditText text2 = (EditText) findViewById(id.Estado);
+
+        /*EditText text2 = (EditText) findViewById(id.Estado);
         String estado = text2.getText().toString();
         //tratamento da excessão sem digitar um estado
         if (TextUtils.isEmpty(estado.toString())) {
             text.setError("Digite um estado");
             return;
-        }
+        }*/
 
 
         final TextView resultArea = (TextView) findViewById(id.result);
@@ -181,4 +219,3 @@ public class MainActivity extends Activity {
 
 
 }
-
